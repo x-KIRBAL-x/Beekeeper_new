@@ -14,13 +14,6 @@ fun ImageView.SetBeehiveImg(item: Beehive?){
     }
 }
 
-@BindingAdapter("BeehiveName")
-fun TextView.setBeehiveName(item: Beehive?){
-    item?.let {
-        text = "Beehive name: " + item.beehiveName
-    }
-}
-
 @BindingAdapter("BeehiveNameListitem")
 fun TextView.setBeehiveNameListItem(item: Beehive?){
     item?.let {

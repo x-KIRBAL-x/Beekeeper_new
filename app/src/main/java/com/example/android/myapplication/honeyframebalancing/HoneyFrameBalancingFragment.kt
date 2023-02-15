@@ -54,6 +54,13 @@ class HoneyFrameBalancingFragment: Fragment() {
             }
         })
 
+        honeyFrameVewModel.navigateToHoneyFrameBalancingDescriptionFragment.observe(this, Observer {
+            if(it==true){
+                this.findNavController().navigate(HoneyFrameBalancingFragmentDirections.actionHoneyframeBalancingToHoneyframeBalancingDescription())
+                honeyFrameVewModel.doneNavigateToHoneyFrameBalancingDescriptionFragment()
+            }
+        })
+
         honeyFrameVewModel.navigateToBeeManagementFragment.observe(this, Observer {
             if (it==true){
                 this.findNavController().navigate(HoneyFrameBalancingFragmentDirections.actionHoneyframeBalancingToBeeManagementFragment(arguments.groupkey))

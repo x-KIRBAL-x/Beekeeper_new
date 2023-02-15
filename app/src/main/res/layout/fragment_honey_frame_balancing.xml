@@ -15,19 +15,17 @@
         android:layout_height="match_parent"
         tools:context=".beegroups.BeeGroupsFragment">
 
-        <TextView
-            android:id="@+id/honey_frame_balancing_text"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/honey_frame_balancing_info"
+            android:layout_width="@dimen/info_button_width"
             android:layout_height="wrap_content"
-            android:text="Honey frame bees"
+            android:text="\?"
             android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="@dimen/margin_end"
+            android:onClick="@{()->honeyFrameViewModel.clickOnInfoButton()}"
             app:layout_constraintBottom_toTopOf="@id/honey_frame_list"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
-
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/honey_frame_list"
@@ -35,7 +33,7 @@
             android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@id/close"
-            app:layout_constraintTop_toBottomOf="@+id/honey_frame_balancing_text"
+            app:layout_constraintTop_toBottomOf="@+id/honey_frame_balancing_info"
             app:layout_constraintEnd_toEndOf="parent"
             />
         <Button

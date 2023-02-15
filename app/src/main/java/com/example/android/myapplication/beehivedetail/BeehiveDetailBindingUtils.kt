@@ -6,6 +6,13 @@ import com.example.android.myapplication.database.Beehive
 import java.text.SimpleDateFormat
 import java.util.*
 
+@BindingAdapter("BeehiveName")
+fun TextView.setBeehiveName(item: Beehive?){
+    item?.let {
+        text = "Beehive name: " + item.beehiveName
+    }
+}
+
 @BindingAdapter("QueenBeeAge")
 fun TextView.setQueenBeeAge(item: Beehive?) {
     item?.let {

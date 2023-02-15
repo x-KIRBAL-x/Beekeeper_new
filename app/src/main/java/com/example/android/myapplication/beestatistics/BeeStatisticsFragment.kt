@@ -153,15 +153,12 @@ class BeeStatisticsFragment: Fragment() {
 
         //remove legend
         ourBarChart.legend.isEnabled = false
-        ourPieChart.legend.isWordWrapEnabled = true
-        ourBarChart.legend.orientation = Legend.LegendOrientation.HORIZONTAL
-        ourBarChart.legend.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
 
         //remove description label
         ourBarChart.description.isEnabled = false
 
         //add animation
-        ourBarChart.animateY(3000)
+        ourBarChart.animateY(1400)
         //refresh the chart
         ourBarChart.invalidate()
     }

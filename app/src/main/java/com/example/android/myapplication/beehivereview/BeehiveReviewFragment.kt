@@ -48,7 +48,7 @@ class BeehiveReviewFragment: Fragment() {
                     var ascosphaeraApis: Int = 0
                     if (binding.nosemaSwitch.isChecked)
                         noszema = 1
-                    if (binding.meszesSwitch.isChecked)
+                    if (binding.ascosphaeraApisSwitch.isChecked)
                         ascosphaeraApis = 10
                     if(binding.broodframeNumberEdit.text.toString() != ""){
                         bfn = binding.broodframeNumberEdit.text.toString().toInt()
@@ -179,6 +179,19 @@ class BeehiveReviewFragment: Fragment() {
             }
         })
 
+        beehiveReviewViewModel.navigateToNosemadescriptionFragment.observe(this, Observer {
+            if(it==true){
+                this.findNavController().navigate(BeehiveReviewFragmentDirections.actionBeehiveReviewFragmentToNosemaDescriptionFragment())
+                beehiveReviewViewModel.donenavigateToNosemadescriptionFragment()
+            }
+        })
+
+        beehiveReviewViewModel.navigateToAscosphaeraApisDescriptionFragment.observe(this, Observer {
+            if(it==true){
+                this.findNavController().navigate(BeehiveReviewFragmentDirections.actionBeehiveReviewFragmentToAscosphaeraApisFragment())
+                beehiveReviewViewModel.doneNavigateToAscosphaeraApisDescriptionFragment()
+            }
+        })
 
         return binding.root
     }

@@ -14,10 +14,14 @@ class HoneyFrameBalancingViewModel(
     val beehives = database.getBadHoneyFrameBees(groupKey)
 
     private val _navigateToBeeReviewFragment = MutableLiveData<Long>()
+    private val _navigateToHoneyFrameBalancingDescriptionFragment = MutableLiveData<Boolean?>()
     private val _navigateToBeeManagementFragment = MutableLiveData<Boolean?>()
 
     val navigateToBeeReviewFragment
         get() = _navigateToBeeReviewFragment
+
+    val navigateToHoneyFrameBalancingDescriptionFragment: LiveData<Boolean?>
+        get() = _navigateToHoneyFrameBalancingDescriptionFragment
 
     val navigateToBeeManagementFragment: LiveData<Boolean?>
         get() = _navigateToBeeManagementFragment
@@ -28,6 +32,14 @@ class HoneyFrameBalancingViewModel(
 
     fun donenavigateToBeeReviewFragment(){
         _navigateToBeeReviewFragment.value=null
+    }
+
+    fun clickOnInfoButton(){
+        _navigateToHoneyFrameBalancingDescriptionFragment.value=true
+    }
+
+    fun doneNavigateToHoneyFrameBalancingDescriptionFragment(){
+        _navigateToHoneyFrameBalancingDescriptionFragment.value=null
     }
 
     fun clickOnCloseButton(){

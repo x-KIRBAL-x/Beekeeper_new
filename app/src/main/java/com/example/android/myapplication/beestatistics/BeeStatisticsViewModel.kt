@@ -29,4 +29,22 @@ class BeeStatisticsViewModel(
             count
         }
     }
+
+    fun getAllBadQueenbee(): Int{
+        val count: Int? = database.getAllBadQueenBee(groupKey, SimpleDateFormat("yyyy").format(Date()).toString().toInt()-2)
+        return if(count==null){
+            0
+        } else{
+            count
+        }
+    }
+
+    fun getAllQueenbee(): Int{
+        val count: Int? = database.getAllQueenbee(groupKey)
+        return if(count==null){
+            0
+        } else{
+            count
+        }
+    }
 }

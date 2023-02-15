@@ -56,19 +56,16 @@ class BeeStatisticsFragment: Fragment() {
         for (i in 0..5){
             queenBeeAge[i] = beeStatisticsViewModel.getQueenBeeYear(i)
         }
-       // population[0] = 3
         populationname[0] = "Very Bad"
-       // population[1] = 2
         populationname[1] = "Bad"
-       // population[2] = 2
         populationname[2] = "Medium"
-       // population[3] = 3//beeStatisticsViewModel.getCountBadPop(3)
         populationname[3] = "Good"
-        //population[4] = 2
         populationname[4] = "Very Good"
 
         populatePieChart(population,populationname)
         queenBeeAgeBarChart(queenBeeAge)
+        binding.requiredQeenbee.text = beeStatisticsViewModel.getAllBadQueenbee().toString() + " / "
+        binding.sumQueenbee.text = beeStatisticsViewModel.getAllQueenbee().toString()
 
         return binding.root
     }
@@ -89,10 +86,10 @@ class BeeStatisticsFragment: Fragment() {
         //assigning color to each slices
         val pieShades: ArrayList<Int> = ArrayList()
         pieShades.add(Color.parseColor("#0E2DEC"))
-        pieShades.add(Color.parseColor("#B7520E"))
-        pieShades.add(Color.parseColor("#5E6D4E"))
-        pieShades.add(Color.parseColor("#DA1F12"))
-        pieShades.add(Color.parseColor("#FF03DAC5"))
+        pieShades.add(Color.parseColor("#03A9F4"))
+        pieShades.add(Color.parseColor("#288D2B"))
+        pieShades.add(Color.parseColor("#FFC107"))
+        pieShades.add(Color.parseColor("#FF5722"))
 
         //add values to the pie dataset and passing them to the constructor
         val ourSet = PieDataSet(ourPieEntry, "")
@@ -162,4 +159,5 @@ class BeeStatisticsFragment: Fragment() {
         //refresh the chart
         ourBarChart.invalidate()
     }
+
 }

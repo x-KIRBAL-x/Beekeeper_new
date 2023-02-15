@@ -71,4 +71,10 @@ interface BeeDatabaseDao {
 
     @Query("SELECT COUNT(*) FROM beehive_table WHERE group_id=:groupkey AND queen_bee_year=:number")
     fun getCountQueenBeeAge(groupkey: Long,number: Int): Int?
+
+    @Query("SELECT COUNT(*) FROM (SELECT * FROM beehive_table WHERE group_id=:groupkey) WHERE queen_bee_year < :year OR queen_bee_state<3")
+    fun getAllBadQueenBee(groupkey: Long, year: Int): Int?
+
+    @Query("SELECT COUNT(*) FROM beehive_table WHERE group_id=:groupkey")
+    fun getAllQueenbee(groupkey: Long): Int?
 }

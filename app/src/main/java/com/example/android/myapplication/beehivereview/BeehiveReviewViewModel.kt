@@ -31,6 +31,7 @@ class BeehiveReviewViewModel(
         private val _editHoneyframeQuantity = MutableLiveData<Boolean?>()
         private val _navigateToNosemadescriptionFragment = MutableLiveData<Boolean?>()
         private val _navigateToAscosphaeraApisDescriptionFragment = MutableLiveData<Boolean?>()
+        private val _navigateToSwarnQuennCellsdescriptionFragment = MutableLiveData<Boolean?>()
 
     val navigateToPreviousFragment: LiveData<Int?>
         get() = _navigateToPreviousFragment
@@ -52,6 +53,9 @@ class BeehiveReviewViewModel(
 
     val navigateToAscosphaeraApisDescriptionFragment: LiveData<Boolean?>
         get() = _navigateToAscosphaeraApisDescriptionFragment
+
+    val navigateToSwarnQuennCellsdescriptionFragment: LiveData<Boolean?>
+        get() = _navigateToSwarnQuennCellsdescriptionFragment
 
 
     fun setBeequeenCondition(quality: Int){
@@ -86,14 +90,15 @@ class BeehiveReviewViewModel(
         }
     }
 
-    fun doneReview(date: String, broodframenumber: Int, honeyframenumber: Int, nosema: Int, ascosphaeraApis: Int, queenbeeYear: Int){
+    fun doneReview(date: String, broodframenumber: Int, honeyframenumber: Int, nosema: Int, ascosphaeraApis: Int, swarmQueenCells: Int, queenbeeYear: Int){
         viewModelScope.launch {
             val newReview = beehive.value ?: return@launch
             newReview.lastManagement = date
             newReview.broodFrameNumber = broodframenumber
             newReview.honeyFrameNumber = honeyframenumber
-            newReview.noszema = nosema
+            newReview.nosema = nosema
             newReview.AscosphaeraApis = ascosphaeraApis
+            newReview.swarmingQueenCells = swarmQueenCells
             newReview.queenBeeYear = queenbeeYear
             database.updateHive(newReview)
         }
@@ -148,6 +153,14 @@ class BeehiveReviewViewModel(
 
     fun clickOnAscosphaeraApisInfoButton(){
         _navigateToAscosphaeraApisDescriptionFragment.value=true
+    }
+
+    fun clickOnSwarnQuennCellInfoButton(){
+        _navigateToSwarnQuennCellsdescriptionFragment.value=true
+    }
+
+    fun doneNavigateToSwarnQuennCellsdescriptionFragment(){
+        _navigateToSwarnQuennCellsdescriptionFragment.value=null
     }
 
     fun doneNavigateToAscosphaeraApisDescriptionFragment(){

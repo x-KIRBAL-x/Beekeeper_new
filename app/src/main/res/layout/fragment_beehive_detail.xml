@@ -12,18 +12,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
-
+        android:layout_height="match_parent">
         <TextView
             android:id="@+id/beehive_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textSize="20dp"
+            android:textSize="@dimen/text_size_20"
             app:layout_constraintBottom_toTopOf="@id/beehive_last_review"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/beehive_renane"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:BeehiveName="@{beehiveDetailViewModel.beehive}"/>
@@ -33,31 +30,70 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textSize="20dp"
+            android:textSize="@dimen/text_size_20"
             app:layout_constraintTop_toBottomOf="@id/beehive_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/queenbee_age_date"
+            app:layout_constraintBottom_toTopOf="@id/queenbee_color_layout"
             app:LastReview="@{beehiveDetailViewModel.beehive}"/>
+
+        <LinearLayout
+            android:id="@+id/queenbee_color_layout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/queenbee_age_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/beehive_last_review">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
+                android:id="@+id/queenbee_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_start"
+                android:text="@string/queenbee_color_text"
+                android:textSize="@dimen/text_size_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/queenbee_color_img"/>
+
+            <ImageView
+                android:id="@+id/queenbee_color_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_end"
+                app:layout_constraintStart_toEndOf="@id/queenbee_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:QueenBeeColor="@{beehiveDetailViewModel.beehive}"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
         <TextView
             android:id="@+id/queenbee_age_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textSize="20dp"
+            android:textSize="@dimen/text_size_20"
             app:layout_constraintBottom_toTopOf="@id/beehive_close"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/beehive_last_review"
+            app:layout_constraintTop_toBottomOf="@id/queenbee_color_layout"
             app:QueenBeeAge="@{beehiveDetailViewModel.beehive}"/>
 
         <Button
             android:id="@+id/beehive_review"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Review"
+            android:text="@string/review_button"
             android:onClick="@{()->beehiveDetailViewModel.clickOnReviewButton()}"
             app:layout_constraintTop_toBottomOf="@id/queenbee_age_date"
             app:layout_constraintEnd_toStartOf="@id/beehive_delete"
@@ -70,7 +106,7 @@
             android:id="@+id/beehive_close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Colse"
+            android:text="@string/close_button"
             android:onClick="@{()->beehiveDetailViewModel.clickOnCloseButton()}"
             app:layout_constraintTop_toBottomOf="@id/beehive_review"
             app:layout_constraintEnd_toEndOf="parent"
@@ -78,11 +114,24 @@
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
+        <ImageButton
+            android:id="@+id/beehive_renane"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/roundcorner"
+            android:onClick="@{()->beehiveDetailViewModel.clickOnEditButton()}"
+            android:src="@drawable/edit_icon"
+            app:layout_constraintBottom_toBottomOf="@id/beehive_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/beehive_name" />
+
         <Button
             android:id="@+id/beehive_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Delete"
+            android:text="@string/delete_hive_button"
             android:onClick="@{()-> beehiveDetailViewModel.clickOnDeleteButton()}"
             app:layout_constraintTop_toBottomOf="@id/queenbee_age_date"
             app:layout_constraintEnd_toEndOf="parent"

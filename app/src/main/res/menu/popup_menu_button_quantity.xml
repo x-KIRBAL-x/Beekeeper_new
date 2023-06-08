@@ -9,6 +9,6 @@
         android:title="@string/two_quantity"/>
     <item
         android:id="@+id/popUpMenuQuantity_Three"
-        android:title="@string/three_quantity" />
+        android:title="@string/three_quantity"/>
 
 </menu>

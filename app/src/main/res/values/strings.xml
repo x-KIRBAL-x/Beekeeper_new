@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Beekeeper</string>
+    <string name="beehive_name"><b>Beehive Name: </b></string>
     <string name="zero">Queenless</string>
     <string name="one">Very bad</string>
     <string name="two">Bad</string>
@@ -8,14 +9,156 @@
     <string name="five">Very good</string>
     <string name="one_quantity">Few</string>
     <string name="two_quantity">Enough</string>
+    <string name="manage_groups_button"><b>Manage Groups</b></string>
+    <string name="management_button"><b>Management</b></string>
+
+    <string name="new_group_button"><b>New Group</b></string>
+
+    <string name="new_beehive_button"><b>New Beehive</b></string>
+    <string name="delete_group_button"><b>Delete Group</b></string>
+
+    <string name="queenbee_color_text"><b>Queenbee Color: </b></string>
+    <string name="queenbee_age_text"><b>Queenbee Age: </b></string>
+    <string name="close_button"><b>Close</b></string>
+    <string name="delete_hive_button"><b>Delete</b></string>
+    <string name="review_button"><b>Review</b></string>
+
+    <string name="group_name_hint"><b>Group Name</b></string>
+    <string name="group_location_hint"><b>Group location</b></string>
+
+    <string name="beehive_name_hint"><b>Beehive name</b></string>
+    <string name="queenbee_year_hint"><b>QueenBee year</b></string>
+
+    <string name="new_name_hint"><b>New name</b></string>
+
+    <string name="delete_text"><b>Are You Sure?</b></string>
+    <string name="yes_button"><b>Yes</b></string>
+    <string name="no_button"><b>No</b></string>
+
+    <string name="queenbee_year_text"><b>Quennbee year: </b></string>
+    <string name="quennbee_condition_text">Queenbee condition:\ </string>
+    <string name="beehive_population_text">Beehive Population:\ </string>
+    <string name="broodframe_quantity_text">Broodframe quantity:\ </string>
+    <string name="broodframe_number_text"><b>Broodframe number:\ </b></string>
+    <string name="honeyframe_quantity_text">Honeyframe quantity:\ </string>
+    <string name="honeyframe_number_text"><b>Honeyframe number:\ </b></string>
+
+    <string name="queenbee_management_button"><b>Queenbee \n management</b></string>
+    <string name="broodframe_balance_button"><b>Broodframe \n balancing</b></string>
+    <string name="honeyframe_balance_button"><b>Honeyframe \n balancing</b></string>
+    <string name="swarming_bees_button"><b>Swarming \n bees</b></string>
+    <string name="sick_beehives_button"><b>Sick \n beehives</b></string>
+    <string name="statistics_button"><b>Statistics</b></string>
+
+    <string name="edit_button"><b>Edit</b></string>
+    <string name="done_button"><b>Done</b></string>
+    <string name="group_name"><b>Group name:</b>\ \ \ \ \ </string>
+    <string name="group_location">Group location:\ </string>
     <string name="three_quantity">Much</string>
     <string name="ascosphaera_apis_and_nosema">Ascosphaera apis and Nosema</string>
-    <string name="ascosphaera_apis">Ascosphaera apis</string>
-    <string name="nosema">Nosema</string>
+    <string name="ascosphaera_apis"><b>Ascosphaera apis</b></string>
+    <string name="nosema"><b>Nosema apis</b></string>
+    <string name="swarm_queen_cells"><b>Swarm queen cells:</b></string>
     <string name="queenbee_warning"> \ \ \ \ \ \ \ \ \ The year isn\'t correct! \n (max. of 5 from the current year)</string>
-    <string name="nosema_description">The D2 should be played as a support tank. In an offensive role, you help destroying advancing enemy tanks and capturing objectives. Stay close to the frontline to maximize penetration power, while staying at a distance from enemy tanks (500-700 m) to avoid being flanked or swarmed. When engaging enemy tanks, angle your tank at 45° to maximize your frontal armour. In a defensive role, being at a distance from the frontline will force enemy tanks to drive in the open to get to you. Always play with a nearby obstacle you can use as cover if you get hit and need to repair. Have a planned retreat route as the enemy will try to use artillery or CAS to dislodge you from cover. A good player in a D2 can lock the enemy advance if positioned in a corridor and properly angled. If you try to use the D2 in a different role on the battlefield, you will quickly reach its limits: as a frontline tank, you will take shots from long range tank destroyers that will disable your tank. Your armour is not thick enough for tank destroyers with long guns. You will also be easily flanked by light tanks or armoured cars, especially if they swarm you. Only 1-on-1 engagements should be performed in this role. If you attempt to play long range engagements, your short gun will lack accuracy and penetration will greatly drop over distance. Even with your good gun depression allowing you to fire from behind the cover of a ridge, the slow muzzle velocity of your shells will make it difficult to aim at moving targets in the distance. The ARL-44 (ACL-1) is a relatively well armoured vehicle and should be played as a support tank: take advantage of your strong armour to shrug enemy fire off from a distance while answering with well placed shots. Your frontal glacis and turret armour are strong enough to resist most enemy guns beyond 500 m. But there are weak spots your opponents will prioritize: the front glacis (if not properly angled) and the turret cupola. Refrain from rushing towards the frontline: your sides are weak and your turret traverse speed is slow so avoid close combat. Staying at a distance from the frontline will also prevent from being taken in a pincer move. Your gun has a good penetration power allowing you to stay at a distance but the lack of explosive filler is detrimental to your performance as you\'ll need two to three shells to take down enemies. Your reload time is a bit longer than most opponents, so aim precisely and make every shot count.</string>
-    <string name="ascosphaera_apis_description">The ARL–44 (ACL–1) is \n a relatively well armoured vehicle and should be played as a support tank: take advantage of your strong armour to shrug enemy fire off from a distance while answering with well placed shots. Your frontal glacis and turret armour are strong enough to resist most enemy guns beyond 500 m. But there are weak spots your opponents will prioritize: the front glacis (if not properly angled) and the turret cupola. Refrain from rushing towards the frontline: your sides are weak and your turret traverse speed is slow so avoid close combat. Staying at a distance from the frontline will also prevent from being taken in a pincer move. Your gun has a good penetration power allowing you to stay at a distance but the lack of explosive filler is detrimental to your performance as you\'ll need two to three shells to take down enemies. Your reload time is a bit longer than most opponents, so aim precisely and make every shot count. Your mobility is rather poor, with a rigid suspension, outdated tracks and a long and cumbersome chassis. Terrain irregularities will make you slow down and hinder your progress. Position your hull carefully when getting to a shooting spot to avoid hull twitching that will impact your targeting process.The D2 should be played as a support tank. In an offensive role, you help destroying advancing enemy tanks and capturing objectives. Stay close to the frontline to maximize penetration power, while staying at a distance from enemy tanks (500–700 m) to avoid being flanked or swarmed. When engaging enemy tanks, angle your tank at 45° to maximize your frontal armour. In a defensive role, being at a distance from the frontline will force enemy tanks to drive in the open to get to you. Always play with a nearby obstacle you can use as cover if you get hit and need to repair. Have a planned retreat route as the enemy will try to use artillery or CAS to dislodge you from cover. A good player in a D2 can lock the enemy advance if positioned in a corridor and properly angled. If you try to use the D2 in a different role on the battlefield, you will quickly reach its limits: as a frontline tank, you will take shots from long range tank destroyers that will disable your tank. Your armour is not thick enough for tank destroyers with long guns. You will also be easily flanked by light tanks or armoured cars, especially if they swarm you. Only 1-on-1 engagements should be performed in this role. If you attempt to play long range engagements, your short gun will lack accuracy and penetration will greatly drop over distance. Even with your good gun depression allowing you to fire from behind the cover of a ridge, the slow muzzle velocity of your shells will make it difficult to aim at moving targets in the distance.</string>
-    <string name="queenbee_man_info">description</string>
-    <string name="brood_frame_info">description</string>
-    <string name="honey_frame_info">description</string>
+    <string name="hive_name_lenght_warrning">Hive\ name\ max.\ 7\ character!</string>
+    <string name="group_name_lenght_warrning">Group\ name\ max.\ 11\ character!</string>
+    <string name="group_location_lenght_warrning">Location\ name\ max\ lenght\ 20\ character!</string>
+    <string name="empty_field_warrning">Please\ fill\ in\ all\ fields!</string>
+    <string name="nosema_description">
+        <b>Nosema apis</b> is a microsporidian, a small, unicellular parasite recently
+        reclassified as a fungus that mainly affects honey bees. It causes <b>nosemosis</b>, also called <b>nosema</b>, which is
+        the most common and widespread of adult honey bee diseases.<i>[1]</i> The dormant stage of <i>N. apis</i> is a long-lived spore which
+        is resistant to temperature extremes and dehydration, and cannot be killed by freezing the contaminated comb. Nosemosis
+        is a listed disease with the Office International des Epizooties (OIE). \n \n
+        <i>[1]</i> Johannes Eckert, Karl Theodor Friedhoff, Horst Zahner, Peter Deplazes: Lehrbuch der Parasitologie für die Tiermedizin (German).
+        2nd Ed., Georg Thieme 2008, ISBN 978-3-8304-1072-0, p. 140. \n \n
+        <b>Effects on the hive</b> \n \n
+        Nosema spores are spread to other colony members through fecal matter. The disease impairs the digestion of pollen, thereby shortening
+        the life of the bee. A greater proportion of worker bees become infected than drones or queens, probably due to the comb-cleaning activities
+        of young bees in which drones and queens do not participate. Nosema-infected bees do not attend or feed the queen to the same extent as healthy
+        bees, which helps the queen to escape infection. When the queen becomes infected, her ovaries degenerate and her egg-laying capacity is reduced
+        due to atrophy of the oocytes. Queens that become infected by the parasite during the brood-rearing season are superseded by the bees. \n \n
+        The seasonal trend of typical infections exhibits low levels during summer, a small peak in autumn, and a slow rise of infection during winter.
+        It is more common during times of confinement - winter and spring. In the spring, the level of infection increases rapidly as brood-rearing starts
+        and while flight possibilities are still limited. Colonies in northern climates are more seriously affected than colonies in the south because of
+        the increased amount of time bees are confined in the hive. Nosema, if left untreated, can cause queen supersedure, winter kills, reduced honey
+        yields, and dwindling populations.
+    </string>
+    <string name="ascosphaera_apis_description">
+        <b>Ascosphaera apis</b> is the fungal cause of the honey bee (Apis mellifera) larval disease chalkbrood. Spores of this fungus germinate within the
+        digestive tract of bees, then begin mycelial growth during the last instar of larval development. Dead larval and pupal bees appear chalky thanks
+        to growth throughout the bee of mycelia. These chalky \'mummies\' are highly infectious, and spores of this fungus often reinfect colonies via
+        stored food supplies or direct transport to younger larvae by adult bees working within the nest. Adult bees reduce the effects of this fungus on
+        the colony by frequently identifying and removing diseased individuals. The disease is associated with high brood density (productivity) and cooler
+        outside temperatures. \n \n
+        <b>References for Ascosphaera apis and <i>chalkbrood</i></b>\n \n
+        <a href="https://www.hgsc.bcm.edu/sites/default/files/images/Ident.A.apis_DNAsegue.pdf">Anderson DL, Gibbs AJ, and Gibson NL. 1998. Indentification
+            and phylogeny of spore-cyst fungi (Ascosphaera spp.) using ribosomal DNA sequences. Mycol. Res. 102(5):541-547.</a> \n \n
+
+        <a href="https://pubmed.ncbi.nlm.nih.gov/8441766/?dopt=Abstract">Qin H, Welker DL, Youssef NN. 1993. Isolation and characterization of a linear
+            plasmid from the entomopathogenic fungus Ascosphaera apis. Plasmid. 29(1):19-30.</a> \n \n
+
+        <a href="https://pubmed.ncbi.nlm.nih.gov/10950136/?dopt=Abstract">Williams DL. 2000. A Veterinary Approach to the European Honey Bee (Apis mellifera).
+            The Veterinary Journal. 160:61?7.</a> \n \n
+
+        <a href="https://www.hgsc.bcm.edu/sites/default/files/images/review_Chalkb.pdf">Michael Hornitzky. 2001. Literature review of chalkbrood?a fungal disease
+            of honeybees.(Rural Industries Research and Development Corporation).</a></string>
+    <string name="queenbee_man_info">This list shows hives where the queen bee is older than 2 years or in less than average condition.</string>
+    <string name="brood_frame_info">The list includes hives with more or bee brood frames than required.</string>
+    <string name="honey_frame_info">The list includes hives with more or less honey frames than required.</string>
+    <string name="swarming_bees_info">This list shows colonies where the number of bee brood frames and the population are strong enough to swarm or whereswarming
+        cells have been found during treatment.</string>
+    <string name="swarm_queen_cells_info">
+        <b>What is a Cell?</b> \n \n
+        To understand the difference between a supersedure cell and a swarm cell, it is helpful to understand the terms and the function these cells serve in the hive.
+        In its most general form, the term “cell” is used to describe any type of closed space created from wax by bees. Using this basic definition, a comb is simply
+        a series of interconnected cells that are used to store honey and pollen and to protect developing brood.
+        \n \n
+        <b>Why Do Bees Make Queen Cells?</b> \n \n
+        However, when beekeepers talk about cells, they are typically referring to queen cells. As the name implies, queen cells are where larva develop and mature into
+        new queens. They are typically around one inch long, have rough surface texture, and are shaped like a peanut shell. Colonies usually produce new queens for one
+        of two distinct reasons.
+        \n \n
+        In the first case, the existing queen is not producing enough brood to keep the colony viable. This can happen when the queen is aging or ill, has run out of genetic
+        material needed to fertilize her eggs, or has died. To keep up the colony numbers, the bees produce a new queen to take over the responsibility of laying eggs.
+        \n \n
+        In the second case, the bees have determined that the colony is too large for their current hive. In this situation, a portion of the bees will prepare to leave
+        the hive with the existing queen. Together, they search for a new location in a migration known as swarming.
+        \n \n
+        <b>What is a Supersedure Cell?</b> \n \n
+        When a colony is raising a new queen to replace the aging, ill or missing queen, they produce supersedure cells. The new queen that emerges from the cell will take
+        over from, or supersede, the old queen. To boost the odds of producing a healthy new queen, the colony creates several supersedure cells at the same time. In most
+        cases, the first one to emerge will become the new queen.
+        \n \n
+        Beekeepers usually find supersedure cells on the comb face, extending out from the surface and hanging downwards. With most varieties of honey bees, the colony
+        will produce between one and three supersedure cells at one time.
+        \n \n
+        <b>What is a Swarm Cell?</b> \n \n
+        By contrast, swarm cells produce a new queen to take the place of the one preparing to leave the hive. Typically, the bees produce many swarm cells and the strongest
+        of these new queens take over the production of new brood for the colony.
+        \n \n
+        Most beekeepers report seeing three or more swarm cells of variable age in their hives. Unlike supersedure cells, bees typically create swarm cells along the margins
+        of the comb when the colony is preparing to swarm.
+        \n \n
+        To recap, a swarm cell is when there is an overabundance of bees in the hive and they need to swarm to create more room. The old queen leaves with part of the hive
+        to find a new home. The new queen from the swarm cell stays to look over the rest of the hive. A supersedure cell is where the current queen is not doing her part in
+        the hive and therefore the hive creates a new queen to take, or supersede, her place.
+        \n \n
+        Don’t be surprised if you see more than one queen cell in a hive. For all queen cell types, bees can make up to ten to ensure a healthy queen is born.[1]
+        \n \n
+        [1]<a href="https://www.dadant.com/learn/identify-queen-cells/">https://www.dadant.com/learn/identify-queen-cells/</a></string>
+    <string name="menu_text">Home</string>
+    <string name="bee_groups_text">Bee Groups</string>
+    <string name="bee_groups_management_text">Bee Groups Management</string>
+    <string name="info_text">About</string>
+    <string name="about_description"><b>Beekeeper app</b> \nVersion:\ 1.0 \nContact:\ \nkirbal93@gmail.com</string>
+    <string name="info_button_text">\?</string>
+    <string name="stat_piechart_title">BeeHive Population</string>
+    <string name="stat_barchart_title">QeenBee Age</string>
+    <string name="stat_hive_total_text">Hive (Total):</string>
+    <string name="stat_bad_queenbee_text">Bad queenbee:</string>
+    <string name="stat_sicks_beehives_text">Sicks Beehives:</string>
+    <string name="stat_swarming_beehives_text">Swarming Beehives:</string>
+    <string name="produced_by_text">Produced by Balázs Király</string>
+    <string name="queenbee_conditions">Queenbee Conditions</string>
 </resources>

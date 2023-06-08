@@ -10,9 +10,9 @@ data class BeeGroup(
     @PrimaryKey(autoGenerate = true)
     var groupId: Long = 0L,
 
-    @ColumnInfo(name = "group_nev")
-    var groupNev: String = "",
+    @ColumnInfo(name = "group_name")
+    var groupName: String = "",
 
-    @ColumnInfo(name = "group_hely")
-    var groupHely: String = "-"
+    @ColumnInfo(name = "group_location")
+    var groupLocation: String = ""
 )

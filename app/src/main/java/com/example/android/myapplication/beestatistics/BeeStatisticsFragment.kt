@@ -1,7 +1,9 @@
 package com.example.android.myapplication.beestatistics
 
 import android.graphics.Color
+import android.icu.number.NumberFormatter
 import android.os.Bundle
+import android.text.Editable.Factory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,14 +19,17 @@ import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.*
+import com.github.mikephil.charting.formatter.DefaultValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
-import java.text.SimpleDateFormat
-import java.util.*
+import java.sql.Types
+import java.util.Formatter
 import kotlin.collections.ArrayList
-import kotlin.math.absoluteValue
+import kotlin.math.roundToInt
+import kotlin.math.roundToLong
 
 class BeeStatisticsFragment: Fragment() {
     private lateinit var ourPieChart: PieChart
+    private lateinit var ourPieChartQueenstate: PieChart
     private lateinit var ourBarChart: BarChart
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,28 +49,44 @@ class BeeStatisticsFragment: Fragment() {
         binding.setLifecycleOwner(this)
 
         ourPieChart = binding.ourPieChart
+        ourPieChartQueenstate = binding.ourPieChartQueenstate
         ourBarChart = binding.ourBarChart
 
         val population = Array<Int>(5) {0}
+        val queebeeState = Array<Int>(6) {0}
+        val queebeeStateName = Array<String>(6) {"n"}
         val populationname = Array<String>(5) {"n"}
         val queenBeeAge = Array<Int>(6){0}
 
         for (i in 1..5) {
-            population[i-1] = beeStatisticsViewModel.getCountBadPop(i)
+            population[i-1] = beeStatisticsViewModel.getCountPopulation(i)
+        }
+        for (i in 0..5) {
+            queebeeState[i] = beeStatisticsViewModel.getCountQueenbeeState(i)
         }
         for (i in 0..5){
             queenBeeAge[i] = beeStatisticsViewModel.getQueenBeeYear(i)
         }
-        populationname[0] = "Very Bad"
-        populationname[1] = "Bad"
-        populationname[2] = "Medium"
-        populationname[3] = "Good"
-        populationname[4] = "Very Good"
+        populationname[0] = resources.getString(R.string.one)
+        populationname[1] = resources.getString(R.string.two)
+        populationname[2] = resources.getString(R.string.three)
+        populationname[3] = resources.getString(R.string.four)
+        populationname[4] = resources.getString(R.string.five)
+
+        queebeeStateName[0] = resources.getString(R.string.zero)
+        queebeeStateName[1] = resources.getString(R.string.one)
+        queebeeStateName[2] = resources.getString(R.string.two)
+        queebeeStateName[3] = resources.getString(R.string.three)
+        queebeeStateName[4] = resources.getString(R.string.four)
+        queebeeStateName[5] = resources.getString(R.string.five)
 
         populatePieChart(population,populationname)
+        queenbeeStatePieChart(queebeeState,queebeeStateName)
         queenBeeAgeBarChart(queenBeeAge)
-        binding.requiredQeenbee.text = beeStatisticsViewModel.getAllBadQueenbee().toString() + " / "
-        binding.sumQueenbee.text = beeStatisticsViewModel.getAllQueenbee().toString()
+        binding.badQueenbee.text = beeStatisticsViewModel.getAllBadQueenbee().toString()
+        binding.sumHive.text = beeStatisticsViewModel.getAllHive().toString()
+        binding.sicksBeehive.text = beeStatisticsViewModel.getAllSickHive().toString()
+        binding.swarmingBeehive.text = beeStatisticsViewModel.getAllSwarmingBeeHives().toString()
 
         return binding.root
     }
@@ -121,6 +142,62 @@ class BeeStatisticsFragment: Fragment() {
         ourPieChart.setDrawEntryLabels(false)
         //refreshing the chart
         ourPieChart.invalidate()
+
+    }
+
+    fun queenbeeStatePieChart(values: Array<Int>, labels: Array<String>) {
+        //an array to store the pie slices entry
+        val ourPieEntry = ArrayList<PieEntry>()
+        var i = 0
+
+        for (entry in values) {
+            //converting to float
+            var value = values[i].toFloat()
+            var label = labels[i]
+            //adding each value to the pieentry array
+            ourPieEntry.add(PieEntry(value, label))
+            i++
+        }
+
+        //assigning color to each slices
+        val pieShades: ArrayList<Int> = ArrayList()
+        pieShades.add(Color.parseColor("#000000"))
+        pieShades.add(Color.parseColor("#982400"))
+        pieShades.add(Color.parseColor("#FF9800"))
+        pieShades.add(Color.parseColor("#FBC02D"))
+        pieShades.add(Color.parseColor("#9CCC65"))
+        pieShades.add(Color.parseColor("#288D2B"))
+
+        //add values to the pie dataset and passing them to the constructor
+        val ourSet = PieDataSet(ourPieEntry, "")
+        val data = PieData(ourSet)
+
+        //setting the slices divider width
+        ourSet.sliceSpace = 1f
+
+        //populating the colors and data
+        ourSet.colors = pieShades
+        ourPieChartQueenstate.data = data
+        //setting color and size of text
+        data.setValueTextColor(Color.WHITE)
+        data.setValueTextSize(7f)
+
+        //add an animation when rendering the pie chart
+        ourPieChartQueenstate.animateY(1400, Easing.EaseInOutQuad)
+        //disabling center hole
+        ourPieChartQueenstate.isDrawHoleEnabled = false
+        //do not show description text
+        ourPieChartQueenstate.description.isEnabled = false
+        //legend enabled and its various appearance settings
+        ourPieChartQueenstate.legend.isEnabled = true
+        ourPieChartQueenstate.legend.orientation = Legend.LegendOrientation.HORIZONTAL
+        ourPieChartQueenstate.legend.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
+        ourPieChartQueenstate.legend.isWordWrapEnabled = true
+
+        //dont show the text values on slices
+        ourPieChartQueenstate.setDrawEntryLabels(false)
+        //refreshing the chart
+        ourPieChartQueenstate.invalidate()
 
     }
 

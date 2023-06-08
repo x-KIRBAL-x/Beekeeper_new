@@ -8,6 +8,18 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="aboutFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-200" />
+                            <option name="y" value="938" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="addNewBeehiveFragment">
                     <value>
                       <LayoutPositions>
@@ -160,6 +172,11 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_beeManagementFragment_to_swarmingBees">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
                         </option>
                       </LayoutPositions>
@@ -217,12 +234,22 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="897" />
-                            <option name="y" value="29" />
+                            <option name="x" value="960" />
+                            <option name="y" value="21" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_beehiveDetailFragment_to_RenameBeehiveFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_beehiveDetailFragment_to_addNewBeehiveFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_beehiveDetailFragment_to_beehiveDeleteFragment">
                               <value>
                                 <LayoutPositions />
@@ -289,6 +316,16 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_beehiveReviewFragment_to_swarmQueenCellsDescriptionFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_beehiveReviewFragment_to_swarmingBees">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
                         </option>
                       </LayoutPositions>
@@ -325,6 +362,11 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_beehivesFragment_to_rename_beegroup">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
                         </option>
                       </LayoutPositions>
@@ -347,6 +389,11 @@
                               </value>
                             </entry>
                             <entry key="action_broodframeBalancing_to_beehiveReviewFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_broodframeBalancing_to_broodframeBalancingDescription">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -492,6 +539,39 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="renameBeehiveFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="1166" />
+                            <option name="y" value="-46" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_renameBeehiveFragment_to_beehiveDetailFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="rename_beegroup">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="212" />
+                            <option name="y" value="1168" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="selectGroupFragment">
                     <value>
                       <LayoutPositions>
@@ -540,6 +620,61 @@
                               </value>
                             </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="swarmQueenCellsDescriptionFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-636" />
+                            <option name="y" value="6" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="swarmingBees">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-436" />
+                            <option name="y" value="-520" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_swarmingBees_to_beeManagementFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_swarmingBees_to_beehiveReviewFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_swarmingBees_to_swarmingBeesDescriptionFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="swarmingBeesDescription">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-266" />
+                            <option name="y" value="-778" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>

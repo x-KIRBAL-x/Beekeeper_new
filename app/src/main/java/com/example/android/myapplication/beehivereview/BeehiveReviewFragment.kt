@@ -1,6 +1,7 @@
 package com.example.android.myapplication.beehivereview
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,13 +44,15 @@ class BeehiveReviewFragment: Fragment() {
                     var bfn: Int
                     var hfn: Int
                     var queenbeeYear: Int
-                    var queenBeeAge: Int
-                    var noszema: Int = 0
+                    var nosema: Int = 0
                     var ascosphaeraApis: Int = 0
+                    var swarmQueenCells: Int = 0
                     if (binding.nosemaSwitch.isChecked)
-                        noszema = 1
+                        nosema = 1
                     if (binding.ascosphaeraApisSwitch.isChecked)
                         ascosphaeraApis = 10
+                    if (binding.swarmQueenCellsSwitch.isChecked)
+                        swarmQueenCells = 1
                     if(binding.broodframeNumberEdit.text.toString() != ""){
                         bfn = binding.broodframeNumberEdit.text.toString().toInt()
                     }
@@ -65,7 +68,7 @@ class BeehiveReviewFragment: Fragment() {
                     if(binding.queenbeeYearEdit.text.toString() != ""){
                         queenbeeYear = binding.queenbeeYearEdit.text.toString().toInt()
                     }
-                    else{
+                    else {
                         queenbeeYear = binding.queenbeeYearEdit.hint.toString().toInt()
                     }
                     if(queenbeeYear>(SimpleDateFormat("yyyy").format(Date()).toString().toInt()-6)
@@ -73,7 +76,7 @@ class BeehiveReviewFragment: Fragment() {
                             beehiveReviewViewModel.doneReview(
                                 SimpleDateFormat("EEEE yyyy-MMM-dd").format(
                                     Date()
-                                ).toString(), bfn, hfn, noszema, ascosphaeraApis, queenbeeYear)
+                                ).toString(), bfn, hfn, nosema, ascosphaeraApis, swarmQueenCells, queenbeeYear)
                         if(it==0){
                             this.findNavController().navigate(
                                 BeehiveReviewFragmentDirections.actionBeehiveReviewFragmentToBeehiveDetailFragment(
@@ -96,6 +99,9 @@ class BeehiveReviewFragment: Fragment() {
                             this.findNavController().navigate(BeehiveReviewFragmentDirections.actionBeehiveReviewFragmentToSickBees(
                                 arguments.beegroupKey))
                         }
+                        if (it==5){
+                            this.findNavController().navigate(BeehiveReviewFragmentDirections.actionBeehiveReviewFragmentToSwarmingBees(arguments.beegroupKey))
+                        }
                             beehiveReviewViewModel.doneNavigating()
                         }
                     else{
@@ -109,9 +115,8 @@ class BeehiveReviewFragment: Fragment() {
 
         beehiveReviewViewModel.editBeequeenCondition.observe(this, Observer {
             if(it==true){
-                var popupmenu: PopupMenu = PopupMenu(application,binding.queenbeeConditionEdit)
-                popupmenu.menuInflater.inflate(R.menu.popup_menu_queenbee_quality,popupmenu.menu)
-                popupmenu.show()
+                var popupmenu: PopupMenu = PopupMenu(context,binding.queenbeeConditionEdit)
+                popupmenu.inflate(R.menu.popup_menu_queenbee_quality)
                 popupmenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item ->
                     when(item.itemId) {
                         R.id.popUpMenuQuality_Zero -> beehiveReviewViewModel.setBeequeenCondition(0)
@@ -123,14 +128,25 @@ class BeehiveReviewFragment: Fragment() {
                     }
                     true
                 })
+                try {
+                    val fieldMPopup = PopupMenu::class.java.getDeclaredField("mPopup")
+                    fieldMPopup.isAccessible = true
+                    val mPopup = fieldMPopup.get(popupmenu)
+                    mPopup.javaClass
+                        .getDeclaredMethod("setForceShowIcon", Boolean::class.java)
+                        .invoke(mPopup, true)
+                } catch (e: Exception){
+                    Log.e("Main", "Error showing menu icons.", e)
+                } finally {
+                    popupmenu.show()
+                }
                 beehiveReviewViewModel.doneEditBeequennCondition()
             }
         })
        beehiveReviewViewModel.editBeehivePopulation.observe(this, Observer {
             if(it==true){
-                var popupmenu: PopupMenu = PopupMenu(application,binding.hivePopulationEdit)
-                popupmenu.menuInflater.inflate(R.menu.popup_menu_population_quality,popupmenu.menu)
-                popupmenu.show()
+                val popupmenu: PopupMenu = PopupMenu(context,binding.hivePopulationEdit)
+                popupmenu.inflate(R.menu.popup_menu_population_quality)
                 popupmenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item ->
                     when(item.itemId) {
                         R.id.popUpMenuQuality_One -> beehiveReviewViewModel.setBeehivePopulation(1)
@@ -141,13 +157,25 @@ class BeehiveReviewFragment: Fragment() {
                     }
                     true
                 })
+                try {
+                    val fieldMPopup = PopupMenu::class.java.getDeclaredField("mPopup")
+                    fieldMPopup.isAccessible = true
+                    val mPopup = fieldMPopup.get(popupmenu)
+                    mPopup.javaClass
+                        .getDeclaredMethod("setForceShowIcon", Boolean::class.java)
+                        .invoke(mPopup, true)
+                } catch (e: Exception){
+                    Log.e("Main", "Error showing menu icons.", e)
+                } finally {
+                    popupmenu.show()
+                }
                 beehiveReviewViewModel.doneEditBeehivePopulation()
             }
         })
 
         beehiveReviewViewModel.editBroodframeQuantity.observe(this, Observer {
             if(it==true){
-                var popupmenu: PopupMenu = PopupMenu(application,binding.broodframeEdit)
+                var popupmenu: PopupMenu = PopupMenu(context,binding.broodframeEdit)
                 popupmenu.menuInflater.inflate(R.menu.popup_menu_button_quantity,popupmenu.menu)
                 popupmenu.show()
                 popupmenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item ->
@@ -164,7 +192,7 @@ class BeehiveReviewFragment: Fragment() {
 
         beehiveReviewViewModel.editHoneyframeQuantity.observe(this, Observer {
             if(it==true){
-                var popupmenu: PopupMenu = PopupMenu(application,binding.honeyFrameEdit)
+                var popupmenu: PopupMenu = PopupMenu(context,binding.honeyFrameEdit)
                 popupmenu.menuInflater.inflate(R.menu.popup_menu_button_quantity,popupmenu.menu)
                 popupmenu.show()
                 popupmenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item ->
@@ -190,6 +218,13 @@ class BeehiveReviewFragment: Fragment() {
             if(it==true){
                 this.findNavController().navigate(BeehiveReviewFragmentDirections.actionBeehiveReviewFragmentToAscosphaeraApisFragment())
                 beehiveReviewViewModel.doneNavigateToAscosphaeraApisDescriptionFragment()
+            }
+        })
+
+        beehiveReviewViewModel.navigateToSwarnQuennCellsdescriptionFragment.observe(this, Observer {
+            if (it==true){
+                this.findNavController().navigate(BeehiveReviewFragmentDirections.actionBeehiveReviewFragmentToSwarmQueenCellsDescriptionFragment())
+                beehiveReviewViewModel.doneNavigateToSwarnQuennCellsdescriptionFragment()
             }
         })
 

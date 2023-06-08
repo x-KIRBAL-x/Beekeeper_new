@@ -11,7 +11,7 @@
             <TextView
                 android:id="@+id/queenbee_balancing_info_text"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:text="@string/queenbee_man_info"/>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

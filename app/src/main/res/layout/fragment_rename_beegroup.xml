@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="renameBeeGroupViewModel"
+            type="com.example.android.myapplication.renamebeegroup.RenameBeeGroupViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/beegroupnamelayout"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/group_name_hint"
+            app:counterEnabled="true"
+            app:helperText="Required*"
+            app:counterMaxLength="11"
+            app:startIconDrawable="@drawable/house"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/group_location_layout"
+            app:layout_constraintTop_toTopOf="parent">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/new_group_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:maxLength="12"
+                app:SetNewGroupName="@{renameBeeGroupViewModel.group}"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/group_location_layout"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/group_location_hint"
+            app:counterEnabled="true"
+            app:helperText="Required*"
+            app:counterMaxLength="20"
+            app:startIconDrawable="@drawable/location_pin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/new_group_done"
+            app:layout_constraintTop_toTopOf="parent">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/new_group_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:maxLength="21"
+                app:SetNewLocation="@{renameBeeGroupViewModel.group}"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/new_group_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/done_button"
+            android:onClick="@{() -> renameBeeGroupViewModel.clickDoneButton()}"
+            app:layout_constraintTop_toBottomOf="@id/group_location_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

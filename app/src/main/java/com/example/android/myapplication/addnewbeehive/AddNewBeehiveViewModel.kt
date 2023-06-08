@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.android.myapplication.database.BeeDatabaseDao
+import com.example.android.myapplication.database.Beehive
 import kotlinx.coroutines.launch
 
 class AddNewBeehiveViewModel(
@@ -14,6 +15,14 @@ class AddNewBeehiveViewModel(
 
 
     val database = dataSource
+
+    private val beehive: LiveData<Beehive>
+
+    init {
+        beehive = database.getBeehiveWithId(beehiveKey)
+    }
+
+    fun getBeehive() = beehive
 
     private val _clickDoneButton = MutableLiveData<Boolean?>()
 
@@ -30,12 +39,10 @@ class AddNewBeehiveViewModel(
 
     fun setValue(name: String, queenyear: Int){
         viewModelScope.launch {
-            val newBeeHive = database.getBeeHive(beehiveKey)
-            val beegroup = database.getgroup(beeGroupKey)
+            var newBeeHive = database.getBeeHive(beehiveKey)
             newBeeHive.beehiveName = name
             newBeeHive.queenBeeYear = queenyear
             newBeeHive.groupId = beeGroupKey
-            newBeeHive.groupName = beegroup.groupNev
             database.updateHive(newBeeHive)
         }
     }

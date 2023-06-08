@@ -11,11 +11,6 @@ import com.example.android.myapplication.databinding.ListItemBeeGroupBinding
 class BeeGroupsAdapter(val clickListener: BeeGroupListener):
     ListAdapter<BeeGroup, BeeGroupsAdapter.ViewHolder>(BeeGroupsDiffCallback()){
 
-   /* override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = getItem(position)
-        holder.bind(item)
-    }*/
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(getItem(position)!!, clickListener)
     }

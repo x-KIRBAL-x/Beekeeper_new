@@ -67,7 +67,6 @@ class BeeGroupsViewModel(
                         val newGroup = BeeGroup()
                         insertgroup(newGroup)
                         var currenGroup = getLastGroupFromDatabase() ?: return@launch
-
                         _navigateToAddNewGroupFragment.value = currenGroup
                 }
         }

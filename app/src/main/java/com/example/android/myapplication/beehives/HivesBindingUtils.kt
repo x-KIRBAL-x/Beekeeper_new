@@ -1,5 +1,6 @@
 package com.example.android.myapplication.beehives
 
+import android.graphics.Typeface
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
@@ -24,14 +25,16 @@ fun TextView.setBeehiveNameListItem(item: Beehive?){
 @BindingAdapter("BeeGroupName")
 fun TextView.setBeeGroupName(item: BeeGroup?){
     item?.let {
-        text = "Group name:     " + item.groupNev
+        text = resources.getString(R.string.group_name) + item.groupName
+        setTypeface(null,Typeface.BOLD)
     }
 }
 
 @BindingAdapter("BeeGroupLocation")
 fun TextView.setBeeGroupLocation(item: BeeGroup?){
     item?.let {
-        text = "Group location: " + item.groupHely
+        text = resources.getString(R.string.group_location) + item.groupLocation
+        setTypeface(null,Typeface.BOLD)
     }
 }
 

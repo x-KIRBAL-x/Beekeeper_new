@@ -2,9 +2,18 @@
 <resources>
     <dimen name="padding">100dp</dimen>
     <dimen name="padding_thirty">30dp</dimen>
-    <dimen name="padding_sixty">60dp</dimen>
-    <dimen name="margin_start">24dp</dimen>
-    <dimen name="margin_end">24dp</dimen>
+    <dimen name="padding_ninety">90dp</dimen>
+    <dimen name="margin_start">16dp</dimen>
+    <dimen name="margin_end">16dp</dimen>
     <dimen name="margin_top">24dp</dimen>
     <dimen name="info_button_width">40dp</dimen>
+    <dimen name="edit_button_width">110dp</dimen>
+    <dimen name="edit_button_height">65dp</dimen>
+    <dimen name="menu_text_size_25">20sp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="list_item_content_width">250dp</dimen>
+    <dimen name="list_item_content_height">30dp</dimen>
+    <dimen name="linear_list_item_text_size">17sp</dimen>
+    <dimen name="list_item_text_size">16sp</dimen>
 </resources>

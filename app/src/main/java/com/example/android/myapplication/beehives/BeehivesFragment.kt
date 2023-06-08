@@ -37,7 +37,6 @@ class BeehivesFragment : Fragment() {
         binding.beehivesViewModel = beeHivesViewModel
 
         val adapter = BeehivesAdapter(BeehiveListener { beehivesId ->
-           // Toast.makeText(context,"${beehivesId}",Toast.LENGTH_SHORT).show()
             beeHivesViewModel.onBeehiveClicked(beehivesId)
         })
         binding.beehivesList.adapter = adapter
@@ -59,6 +58,7 @@ class BeehivesFragment : Fragment() {
 
         beeHivesViewModel.navigateToAddNewBeehiveFragment.observe(this, Observer {
             beehive -> beehive?.let {
+            //Toast.makeText(context,"${beehive.beehiveId} ${arguments.beeGroupKey}",Toast.LENGTH_SHORT).show()
                 this.findNavController().navigate(BeehivesFragmentDirections.actionBeehivesFragmentToAddNewBeehiveFragment(arguments.beeGroupKey,beehive.beehiveId))
             beeHivesViewModel.doneNavigateToAddNewBeehiveFragment()
         }
@@ -76,7 +76,13 @@ class BeehivesFragment : Fragment() {
             this.findNavController().navigate(BeehivesFragmentDirections.actionBeehivesFragmentToBeehiveDetailFragment(beehive,arguments.beeGroupKey))
             beeHivesViewModel.doneNavigateToBeeDetailFragment()
         }
+        })
 
+        beeHivesViewModel.navigateToRenameGroupFragment.observe(this, Observer {
+            if (it==true){
+                this.findNavController().navigate(BeehivesFragmentDirections.actionBeehivesFragmentToRenameBeegroup(arguments.beeGroupKey))
+                beeHivesViewModel.doneNavigateToRenameGroupFragment()
+            }
         })
 
         val manager = GridLayoutManager(activity, 3, GridLayoutManager.VERTICAL,false)

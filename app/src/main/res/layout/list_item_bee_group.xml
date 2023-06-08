@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -21,9 +19,9 @@
 
         <ImageView
             android:id="@+id/group_img"
-            android:layout_width="64dp"
+            android:layout_width="165dp"
             android:layout_height="64dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             app:GroupImage="@{group}"
@@ -37,7 +35,8 @@
             android:layout_width="0dp"
             android:layout_height="26dp"
             android:textAlignment="center"
-            android:textSize="10dp"
+            android:textSize="@dimen/list_item_text_size"
+            android:textStyle="bold"
             app:GroupName="@{group}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/group_img"

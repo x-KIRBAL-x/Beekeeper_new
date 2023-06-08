@@ -20,9 +20,9 @@
 
         <ImageView
             android:id="@+id/beehive_img"
-            android:layout_width="64dp"
+            android:layout_width="115dp"
             android:layout_height="64dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -34,8 +34,10 @@
         <TextView
             android:id="@+id/group_name"
             android:layout_width="0dp"
-            android:layout_height="20dp"
+            android:layout_height="26dp"
             android:textAlignment="center"
+            android:textSize="@dimen/list_item_text_size"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/beehive_img"
             app:layout_constraintHorizontal_bias="0.0"

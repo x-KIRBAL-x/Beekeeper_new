@@ -2,8 +2,7 @@
 
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
@@ -20,12 +19,11 @@
             android:id="@+id/beegroup_confirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Are You Sure?"
+            android:hint="@string/delete_text"
             android:textAlignment="center"
-            android:textSize="20dp"
+            android:textSize="@dimen/text_size_20"
             app:layout_constraintBottom_toTopOf="@id/beegroup_yes"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,25 +31,23 @@
             android:id="@+id/beegroup_yes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yes"
+            android:text="@string/yes_button"
             android:onClick="@{()->groupDeleteViewModel.clickOnDeleteGroup()}"
             app:layout_constraintTop_toBottomOf="@id/beegroup_confirm"
             app:layout_constraintEnd_toStartOf="@id/beegroup_no"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <Button
             android:id="@+id/beegroup_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No"
+            android:text="@string/no_button"
             android:onClick="@{()->groupDeleteViewModel.clickOnNoButton()}"
             app:layout_constraintTop_toBottomOf="@id/beegroup_confirm"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/beegroup_yes"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

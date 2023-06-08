@@ -39,7 +39,6 @@ class BeeGroupsFragment : Fragment() {
         binding.beeGroupsViewModel = beeGroupsViewModel
 
         val adapter = BeeGroupsAdapter(BeeGroupListener { groupId ->
-           // Toast.makeText(context, "${groupId}", Toast.LENGTH_SHORT).show()
             beeGroupsViewModel.onBeeGroupsClicked(groupId)
         })
         binding.beegroupsList.adapter = adapter
@@ -75,7 +74,7 @@ class BeeGroupsFragment : Fragment() {
             }
         })
 
-        val manager = GridLayoutManager(activity,3,GridLayoutManager.VERTICAL,false)
+        val manager = GridLayoutManager(activity,2,GridLayoutManager.VERTICAL,false)
         binding.beegroupsList.layoutManager = manager
 
 

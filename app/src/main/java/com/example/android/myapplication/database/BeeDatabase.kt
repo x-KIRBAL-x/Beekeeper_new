@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [BeeGroup::class, Beehive::class], version = 10, exportSchema = false)
+@Database(entities = [BeeGroup::class, Beehive::class], version = 13, exportSchema = false)
 abstract class BeeDatabase: RoomDatabase() {
 
     abstract val beeDatabaseDao: BeeDatabaseDao

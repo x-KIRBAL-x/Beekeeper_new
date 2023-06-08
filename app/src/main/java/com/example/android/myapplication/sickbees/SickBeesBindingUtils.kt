@@ -17,7 +17,7 @@ fun TextView.setBeeName(item: Beehive?){
 @BindingAdapter("BeeSick")
 fun TextView.setBeeSick(item: Beehive?){
     item?.let {
-        text = convertNumericSickToString(item.noszema + item.AscosphaeraApis, context.resources)
+        text = convertNumericSickToString(item.nosema + item.AscosphaeraApis, context.resources)
     }
 }
 

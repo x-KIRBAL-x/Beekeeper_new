@@ -11,7 +11,7 @@
             <TextView
                 android:id="@+id/brood_frame_balancing_info_text"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:text="@string/brood_frame_info"/>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

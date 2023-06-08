@@ -16,6 +16,6 @@ fun ImageView.setGroupImage(item: BeeGroup?){
 @BindingAdapter("SelectGroupName")
 fun TextView.setGroupName(item: BeeGroup?){
     item?.let {
-        text = item.groupNev
+        text = item.groupName
     }
 }

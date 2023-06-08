@@ -61,7 +61,7 @@ class SelectGroupFragment: Fragment() {
             }
         })
 
-        val manager = GridLayoutManager(activity, 3, GridLayoutManager.VERTICAL,false)
+        val manager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL,false)
         binding.selectGroupsList.layoutManager = manager
 
         return binding.root

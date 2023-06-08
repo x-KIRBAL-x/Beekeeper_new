@@ -10,9 +10,9 @@ class AddNewBeehiveViewModelFactory(
     private val dataSource: BeeDatabaseDao): ViewModelProvider.Factory {
     @Suppress("unchecked_cast")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(AddNewBeehiveViewModel::class.java)){
+        if(modelClass.isAssignableFrom(AddNewBeehiveViewModel::class.java)){
             return AddNewBeehiveViewModel(beeGroupKey,beehiveKey,dataSource) as T
         }
-        throw IllegalArgumentException("Unknown View Model")
+        throw IllegalArgumentException("Unknown ViewModel class")
     }
 }

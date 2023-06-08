@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.doOnTextChanged
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -41,19 +42,54 @@ class AddNewGroupFragment : Fragment() {
         binding.addNewGroupViewModel = addNewGroupViewModel
 
         addNewGroupViewModel.clickDoneButton.observe(this, Observer {
-            if (it==true) {
+            if (it!=null) {
                         if( binding.newGroupName.text.toString() != "" && binding.newGroupLocation.text.toString() != ""){
-                        addNewGroupViewModel.setvalue(binding.newGroupName.text.toString(),binding.newGroupLocation.text.toString())
-                            this.findNavController()
-                            .navigate(AddNewGroupFragmentDirections.actionAddNewGroupFragmentToBeeGroupsFragment())
-                            addNewGroupViewModel.doneNavigatingToGroupsFragment()
+                            val groupNameLenght: Int = binding.newGroupName.text.toString().length
+                            val groupLocationLenght: Int = binding.newGroupLocation.text.toString().length
+                            if (groupNameLenght<12) {
+                                if (groupLocationLenght<21) {
+                                    if (it == 1) {
+                                        addNewGroupViewModel.setvalue(
+                                            binding.newGroupName.text.toString(),
+                                            binding.newGroupLocation.text.toString()
+                                        )
+                                        this.findNavController()
+                                            .navigate(AddNewGroupFragmentDirections.actionAddNewGroupFragmentToBeeGroupsFragment())
+                                        addNewGroupViewModel.doneNavigatingToGroupsFragment()
+                                    }
+                                }
+                                else{
+                                    Toast.makeText(application,resources.getString(R.string.group_location_lenght_warrning),Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                            else{
+                                Toast.makeText(application,resources.getString(R.string.group_name_lenght_warrning),Toast.LENGTH_SHORT).show()
+                            }
                     }
                     else{
-                        Toast.makeText(application,"Please fill in all fields!",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(application,resources.getString(R.string.empty_field_warrning),Toast.LENGTH_SHORT).show()
                     }
 
             }
         })
+
+        binding.newGroupName.doOnTextChanged { text, start, before, count ->
+            if (text!!.length > 11){
+                binding.beegroupnamelayout.error = "No More!"
+            }
+            else if (text.length <= 11){
+                binding.beegroupnamelayout.error = null
+            }
+        }
+
+        binding.newGroupLocation.doOnTextChanged { text, start, before, count ->
+            if (text!!.length > 20){
+                binding.groupLocationLayout.error = "No More!"
+            }
+            else if(text.length <= 20){
+                binding.groupLocationLayout.error = null
+            }
+        }
 
         return binding.root
     }

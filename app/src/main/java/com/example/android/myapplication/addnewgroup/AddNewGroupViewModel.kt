@@ -21,9 +21,9 @@ class AddNewGroupViewModel(dataSource: BeeDatabaseDao,
           group = database.getGroupWithId(groupKey)
     }
 
-    private val _clickDoneButton = MutableLiveData<Boolean?>()
+    private val _clickDoneButton = MutableLiveData<Int?>()
 
-    val clickDoneButton: LiveData<Boolean?>
+    val clickDoneButton: LiveData<Int?>
         get() = _clickDoneButton
 
     fun doneNavigatingToGroupsFragment(){
@@ -31,14 +31,14 @@ class AddNewGroupViewModel(dataSource: BeeDatabaseDao,
     }
 
     fun clickDoneButton(){
-        _clickDoneButton.value=true
+        _clickDoneButton.value=1
     }
 
-    fun setvalue(nev: String, hely: String){
+    fun setvalue(newName: String, newLocation: String){
         viewModelScope.launch {
-            val newgroup = database.getgroup(groupKey)
-            newgroup.groupNev = nev
-            newgroup.groupHely = hely
+            val newgroup = group.value ?: return@launch
+            newgroup.groupName = newName
+            newgroup.groupLocation = newLocation
             database.updateGroup(newgroup)
         }
     }

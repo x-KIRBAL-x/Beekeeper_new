@@ -13,7 +13,7 @@ data class Beehive(
     var groupName: String = "-",
 
     @ColumnInfo(name = "beehive_name")
-    var beehiveName: String = "-",
+    var beehiveName: String = "",
 
     @ColumnInfo(name = "queen_bee_age")
     var queenBeeAge: Int = 0,
@@ -43,10 +43,13 @@ data class Beehive(
     var honeyFrame: Int = 2,
 
     @ColumnInfo(name = "nosema")
-    var noszema: Int = 0,
+    var nosema: Int = 0,
 
     @ColumnInfo(name = "ascosphaera_apis")
     var AscosphaeraApis: Int = 0,
+
+    @ColumnInfo(name = "swarming_queen_cells")
+    var swarmingQueenCells: Int = 0,
 
     @ColumnInfo(name = "group_id")
     var groupId: Long = 0L
